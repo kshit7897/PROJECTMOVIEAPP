@@ -21,6 +21,12 @@
     /* flex-wrap: wrap; */
 
     display: none;
+    position: absolute;
+    margin-left: 40%;
+}
+
+h1{
+    color: #fff;
 }
 
 .header{
@@ -57,7 +63,7 @@
 }
 
 
-.addbtn{
+#addbtn{
     font-size: 18px;
     border-radius: 8px;
     padding: 5px 10px;
@@ -67,7 +73,7 @@
     background-image: linear-gradient(yellow,red);
     font-weight: bold;
 }
-.cancelbtn{
+#cancelbtn{
     font-size: 15px;
     padding: 5px;
     border-radius: 8px;
@@ -78,3 +84,31 @@
 
 
 }
+
+#displayitem{
+    width: 300px;
+    height: auto;
+    background-color:rgb(187, 167, 167);
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    /* padding: 10px; empty blank box error */
+}
+img{
+    width: 250px;
+    height: 250;
+}
+.displayNone{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -11,7 +11,13 @@
 <body>
      <header class="header">
         <h1>Air Movie</h1>
-        <input class="filternav" type="text" placeholder="Search by Category ">
+        <!-- <input class="filternav" type="text" placeholder="Search by Category "> -->
+        <select class="filternav" id="categorybtn">
+            <option value="action">Action</option>
+            <option value="romance">Romance</option>
+            <option value="drama">Drama</option>
+            <option value="comedy">Comedy</option>
+        </select>
         <input class="filternav" type="number" placeholder="search by IMDB">
         <input class="filternav" type="text" placeholder="Search by Actor Director">
         <button class="filternav" id="mainbtn">ClickMe</button>
@@ -19,20 +25,26 @@
         
      </header>
     <div class="container">
-        <input class="popup" type="text" placeholder="Movie Name">
-        <input class="popup" type="text" placeholder="Image link">
-        <input class="popup" type="number" placeholder="IMDB Rating" >
-        <input class="popup" type="text" placeholder="Category">
-        <input class="popup" type="text" placeholder="Trailer link" >
-        <input class="popup" type="text" placeholder="Actors Name">
-        <input class="popup" type="text" placeholder="Director Name">
-        <button class="addbtn">Add Movie</button>
-        <button class="cancelbtn">CANCEL</button>
+        <input id="mname" class="popup" type="text" placeholder="Movie Name">
+        <input id="ilink" class="popup" type="text" placeholder="Image link">
+        <input id="rate" class="popup" type="number" placeholder="IMDB Rating" >
+        <!-- <input class="popup" type="text" placeholder="Category"> -->
+        <select class="popup" id="selectbtn">
+            <option value="action">Action</option>
+            <option value="romance">Romance</option>
+            <option value="drama">Drama</option>
+            <option value="comedy">Comedy</option>
+        </select>
+        <input id="tlink" class="popup" type="url" placeholder="Trailer link" >
+        <input id="aname" class="popup" type="text" placeholder="Actors Name">
+        <input id="dname" class="popup" type="text" placeholder="Director Name">
+        <button id="addbtn">Add Movie</button>
+        <button id="cancelbtn">CANCEL</button>
     
     </div>
 
-    <div class="displayitem">
-
+    <div id="displayitem">
+    
     </div>
 
 
