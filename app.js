@@ -27,8 +27,13 @@ cancel.addEventListener("click",function() {
 let btn = document.querySelector('#addbtn')
 btn.addEventListener('click',(event)=>{
         add(event)
-        container.classList.add('displayNone')
+        // container.classList.add('displayNone')
 })
+
+let categorybtn = document.querySelector('#categorybtn');
+categorybtn.addEventListener('change',filterData)
+ let sortbtn = document.querySelector('#imdbbtn')
+ sortbtn.addEventListener('click', sortme)
 const data = [];
 const displayitem = document.querySelector('#displayitem');
 function add(event) {
@@ -53,28 +58,46 @@ function add(event) {
    showData(data)
 }
 
+function filterData() {
+    let val = categorybtn.value
+    let filteredData = data.filter((d)=>{
+        return d.head1 === val
+    })
+    showData(filteredData)
+}
+
+function sortme() {
+    let sortedData = data.sort((a,b)=>{
+        return b.head2-a.head2
+    })
+    // console.log(sortedData)
+    showData(sortedData)
+}
+
+
 function showData(array) {
-    container.innerHTML=null
+    console.log(array)
+    displayitem.innerHTML=null
     array.map((d)=>{
 let div = document.createElement('div');
 let h3 = document.createElement('h3');
 let img = document.createElement('img');
 let category = document.createElement('p');
-category.textContent = obj.head1
+category.textContent = d.head1
 let rating = document.createElement('p');
-rating.textContent = obj.head2
+rating.textContent = 'IMDB Rating'+':-'+d.head2
 
 let videoLink = document.createElement('a');
-videoLink.textContent = obj.videoLink
+videoLink.textContent = d.videoLink
 let asearch = document.createElement('p');
 let dsearch = document.createElement('p');
 
-h3.textContent = obj.movie
-img.setAttribute('src', obj.imgLink)
-category.textContent = obj.head1
-videoLink.setAttribute('href',obj.videoLink)
-asearch.textContent = obj.actor
-dsearch.textContent = obj.director
+h3.textContent ='movie Name'+':-'+ d.movie
+img.setAttribute('src', d.imgLink)
+category.textContent ='Category'+':-'+ d.head1
+videoLink.setAttribute('href',d.videoLink)
+asearch.textContent = 'Actor Name'+':-'+ d.actor
+dsearch.textContent = 'Director Name'+':-'+d.director
 div.append(h3,img,category,rating,videoLink,asearch,dsearch)
 
 displayitem.append(div) 
